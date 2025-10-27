@@ -1,0 +1,39 @@
+<div id="app">
+  <form v-on:submit.prevent="addItem">
+    <p>Add item</p>
+    <p>Item name: <input type="text" required v-model="itemName"></p>
+    <p>How many: <input type="number" v-model="itemNumber"></p>
+    <button type="submit">Add item</button>
+  </form>
+
+  <p>Shopping List:</p>
+  <ul>
+    <li v-for="item in shoppingList">{{ item.name }}: {{ item.number }}</li>
+  </ul>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        itemName: null,
+        itemNumber: null,
+        shoppingList: [
+          { name: 'Tomatoes', number: 5 }
+        ]
+      }
+    },
+    methods: {
+        addItem() {
+            this.shoppingList.push({
+                name: this.itemName,
+                number: this.itemNumber
+            });
+            this.itemName = null;
+            this.itemNumber = null;
+        }
+    }
+  })
+  app.mount('#app')
+</script>

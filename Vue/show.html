@@ -1,0 +1,21 @@
+<div id="app">
+  <div id="lightDiv">
+    <div 
+v-show
+="lightOn"></div>
+    <img src="img_lightBulb.svg">
+  </div>
+  <button v-on:click=" lightOn =! lightOn ">Switch light</button>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        lightOn: false
+      }
+    }
+  })
+  app.mount('#app')
+</script>
