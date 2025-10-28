@@ -1,11 +1,18 @@
-<script setup></script>
+<script>
+export default {
+  data() {
+    return {
+      message: 'This is madi'
+    };
+  }
+};
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <h1>{{ message }}</h1>
+  <food-item fruit-name="Orange" fruit-desc="1"/>
+  <food-item fruit-name="Pizza" fruit-desc="2"/>
+  <food-item fruit-name="Rice" fruit-desc="3"/>
 </template>
 
-<style scoped></style>
+<style></style>
