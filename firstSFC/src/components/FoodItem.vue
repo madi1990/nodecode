@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @click="itemClicked">
     <h2>{{ fruitName }}</h2>
     <p>{{ fruitDesc }}</p>
   </div>
@@ -8,6 +8,12 @@
 <script>
 export default {
   props: ['fruitName', 'fruitDesc'],
+  emits: ['itemClicked'],
+  methods: {
+    itemClicked() {
+      this.$emit('itemClicked', this.fruitName);
+    }
+  },
   data() {
     return {
       name: 'Apples',
